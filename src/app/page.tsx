@@ -13,58 +13,58 @@ interface Exercise {
 }
 
 export default function Home() {
-  const [exercise, setExercise] = useState<Exercise[] | null>(null);
-  const [muscle, setMuscle] = useState<string | null>("");
+  // const [exercise, setExercise] = useState<Exercise[] | null>(null);
+  // const [muscle, setMuscle] = useState<string | null>("");
 
-  const baseURL = "https://api.api-ninjas.com/v1";
-  const muscles = [
-    "abdominals",
-    "abductors",
-    "adductors",
-    "biceps",
-    "calves",
-    "chest",
-    "forearms",
-    "glutes",
-    "hamstrings",
-    "lats",
-    "lower_back",
-    "middle_back",
-    "neck",
-    "quadriceps",
-    "traps",
-    "triceps",
-  ];
+  // const baseURL = "https://api.api-ninjas.com/v1";
+  // const muscles = [
+  //   "abdominals",
+  //   "abductors",
+  //   "adductors",
+  //   "biceps",
+  //   "calves",
+  //   "chest",
+  //   "forearms",
+  //   "glutes",
+  //   "hamstrings",
+  //   "lats",
+  //   "lower_back",
+  //   "middle_back",
+  //   "neck",
+  //   "quadriceps",
+  //   "traps",
+  //   "triceps",
+  // ];
 
-  const fetchWorkouts = async () => {
-    try {
-      const response = await axios.get(`${baseURL}/exercises?muscle=${muscle}`, {
-        headers: {
-          "X-Api-Key": process.env.NEXT_PUBLIC_API_KEY,
-        },
-      });
-      setExercise(response.data);
-    } catch {
-      console.error("Error fetching workouts");
-      return [];
-    }
-  };
+  // const fetchWorkouts = async () => {
+  //   try {
+  //     const response = await axios.get(`${baseURL}/exercises?muscle=${muscle}`, {
+  //       headers: {
+  //         "X-Api-Key": process.env.NEXT_PUBLIC_API_KEY,
+  //       },
+  //     });
+  //     setExercise(response.data);
+  //   } catch {
+  //     console.error("Error fetching workouts");
+  //     return [];
+  //   }
+  // };
 
-  useEffect(() => {
-    fetchWorkouts();
-  }, [muscle]);
+  // useEffect(() => {
+  //   fetchWorkouts();
+  // }, [muscle]);
 
-  const handleMuscle = (selectedMuscle: string) => {
-    setMuscle(selectedMuscle);
-  };
+  // const handleMuscle = (selectedMuscle: string) => {
+  //   setMuscle(selectedMuscle);
+  // };
 
-  if (!exercise) {
-    return null;
-  }
+  // if (!exercise) {
+  //   return null;
+  // }
 
   return (
     <main>
-      <div>
+      {/* <div>
         <h1>Workouts</h1>
         <h2>Create Workout by Selecting Muscle Groups</h2>
         <div>
@@ -77,7 +77,7 @@ export default function Home() {
             <li>{workout.name}</li>
           ))}
         </ul>
-      </div>
+      </div> */}
     </main>
   );
 }
